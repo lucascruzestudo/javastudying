@@ -20,22 +20,19 @@ public class Main {
         switch (operator){
             case "+":
                 result = calculator.add();
-                System.out.println("Result: " + result);
                 break;
             case "-":
                 result = calculator.subtract();
-                System.out.println("Result: " + result);
                 break;
             case "/":
                 result = calculator.divide();
-                System.out.println("Result: " + result);
                 break;
             case "*":
                 result = calculator.multiply();
-                System.out.println("Result: " + result);
                 break;
         }
-
+        
+        System.out.println("Result: " + result);
 
     }
 
@@ -47,13 +44,11 @@ public class Main {
                 System.out.println("Type a float value: ");
                 num = scanner.nextFloat();
                 isValid = true;
-                break;
             } catch (InputMismatchException e) {
                 System.out.println("ERROR: The value inserted is not a valid float.");
-                isValid = false;
                 consumeInvalidInput(scanner);
             }
-        } while (isValid == false);
+        } while (!isValid);
         return num;
     }
 
@@ -64,26 +59,23 @@ public class Main {
             try {
                 System.out.println("Type an operator (+; -; /; *): ");
                 operator = scanner.next();
-                if (operator.equals("+") || operator.equals("-") || operator.equals("/") || operator.equals("*")){
-                    isValid = true;
-                    break;
-                } else {
+                if (!operator.matches("[+\\-*/]")) {
                     System.out.println("ERROR: The value inserted is not a valid operator.");
-                    isValid = false;
                     consumeInvalidInput(scanner);
+                } else {
+                    isValid = true;
                 }
             } catch (InputMismatchException e) {
                 System.out.println("ERROR: The value inserted is not a valid operator.");
-                isValid = false;
                 consumeInvalidInput(scanner);
             }
-        } while (isValid == false);
+        } while (!isValid);
         return operator;
     }
 
     private static void consumeInvalidInput(Scanner scanner){
         if (scanner.hasNextLine()) {
-            scanner.nextLine(); // if there is a value in the input buffer, consumes it so the input buffer becomes empty again
+            scanner.nextLine(); // CLEAR INPUT BUFFER
         }
     }
 
