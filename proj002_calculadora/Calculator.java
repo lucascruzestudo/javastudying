@@ -3,7 +3,6 @@ public class Calculator {
     private float num2;
 
     public Calculator() {
-        // Do nothing in the constructor
     }
 
     public void setNum1(float num1) {
