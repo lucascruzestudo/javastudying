@@ -55,6 +55,8 @@ public class Main {
 
 			}
 
+		scanner.close();
+		
 		}
 
 		int contador90quilos = 0;
