@@ -8,12 +8,13 @@ preço da gasolina é R$ 1,50 o litro.
  */
 
 public class Main {
-    public static void main (String[] args){
-        float distancia = 520;//km
-        float consumo = 12;//km
+    public static void main(String[] args) {
+        float distancia = 520;// km
+        float consumo = 12;// km
         float precoGasolina = 1.5f;
-        float litrosNecessarios = distancia/consumo;
+        float litrosNecessarios = distancia / consumo;
         float custoTotal = litrosNecessarios * precoGasolina;
-        System.out.println("Maria precisará de "+litrosNecessarios+" litros para chegar ao destino, o custo será: R$"+custoTotal);
+        System.out.println("Maria precisará de " + litrosNecessarios
+                + " litros para chegar ao destino, o custo será: R$" + custoTotal);
     }
 }
