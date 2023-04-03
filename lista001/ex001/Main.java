@@ -1,4 +1,4 @@
-package lista001;
+package ex001;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 • A média das idades das 7 pessoas. */
 
 
-public class Ex1 {
+public class Main {
 
 	public static void main(String[] args) {
 		int[][] valoresPessoas = new int[7][2];
