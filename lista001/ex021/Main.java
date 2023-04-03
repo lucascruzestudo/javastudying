@@ -22,24 +22,21 @@ public class Main {
         
 			do {
 				try {
-                    System.out.println("Informe o "+ (indice+1) + "º valor:");
-					notas[indice] = scanner.nextInt();
-
-					if (notas[indice] > 0 && notas[indice] <= 10) {
+					System.out.println("Informe o " + (indice + 1) + "º valor:");
+					notas[indice] = scanner.nextFloat();
+		
+					if (notas[indice] >= 0 && notas[indice] <= 10) {
 						valorValido = true;
 					} else {
 						System.out.println(mensagemErro);
-						valorValido = false;
-						consumirInputInvalido(scanner);
 					}
-
-					break;
+		
 				} catch (InputMismatchException e) {
 					System.out.println(mensagemErro);
-					valorValido = false;
 					consumirInputInvalido(scanner);
 				}
-			} while (valorValido == false);
+		
+			} while (!valorValido);
 
 			}
 
@@ -59,7 +56,7 @@ public class Main {
 
     private static void consumirInputInvalido(Scanner scanner) {
         if (scanner.hasNext()) {
-            scanner.next(); // consumir valor atualmente no input 
+            scanner.next(); // consumir valor atualmente no input se for inválido
         }
     }
 

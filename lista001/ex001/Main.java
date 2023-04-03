@@ -20,20 +20,20 @@ public class Main {
 
 		for (int pessoa = 0; pessoa < 7; pessoa++) {
 			for (int indice = 0; indice < 2; indice++) {
-				switch (indice) {
-					case 0:
-						System.out.println("Informe a idade da pessoa " + (pessoa + 1) + ": ");
-						break;
-
-					case 1:
-						System.out.println("Informe o peso da pessoa " + (pessoa + 1) + " em quilos: ");
-						break;
-				}
 
 				boolean valorValido = false;
         String mensagemErro = "O valor informado nao é valido, informe um valor numérico acima de 0.";
         
 				do {
+					switch (indice) {
+						case 0:
+							System.out.println("Informe a idade da pessoa " + (pessoa + 1) + ": ");
+							break;
+	
+						case 1:
+							System.out.println("Informe o peso da pessoa " + (pessoa + 1) + " em quilos: ");
+							break;
+					}
 					try {
 						valoresPessoas[pessoa][indice] = scanner.nextInt();
 
@@ -41,11 +41,7 @@ public class Main {
 							valorValido = true;
 						} else {
 							System.out.println(mensagemErro);
-							valorValido = false;
-							consumirInputInvalido(scanner);
 						}
-
-						break;
 					} catch (InputMismatchException e) {
 						System.out.println(mensagemErro);
 						valorValido = false;
@@ -55,9 +51,10 @@ public class Main {
 
 			}
 
-		scanner.close();
 		
 		}
+
+		scanner.close();
 
 		int contador90quilos = 0;
 		float totalIdades = 0;
