@@ -12,8 +12,20 @@ public class Main {
         float distancia = 520;// km
         float consumo = 12;// km
         float precoGasolina = 1.5f;
-        float litrosNecessarios = distancia / consumo;
-        float custoTotal = litrosNecessarios * precoGasolina;
+        float litrosNecessarios = obterLitrosNecessarios(distancia, consumo);
+        float custoTotal = obterCustoTotal(litrosNecessarios, precoGasolina);
+        imprimirResultado(litrosNecessarios, custoTotal);
+    }
+
+    private static float obterLitrosNecessarios(float distancia, float consumo){
+        return distancia / consumo;
+    }
+
+    private static float obterCustoTotal(float litrosNecessarios, float precoGasolina){
+        return litrosNecessarios * precoGasolina;
+    }
+
+    private static void imprimirResultado(float litrosNecessarios, float custoTotal) {
         System.out.println("Maria precisará de " + litrosNecessarios
                 + " litros para chegar ao destino, o custo será: R$" + custoTotal);
     }
